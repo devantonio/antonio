@@ -244,19 +244,19 @@ header{
 }
 
 .location li:nth-child(1) {
-    font-size: 22px;
+    font-size: 19px;
     font-weight: lighter;
     padding-bottom: 10px;
 }
 
 .location li:nth-child(2), .email li:nth-child(2) {
-    font-size: 15px;
+    font-size: 14px;
     color: #000000d6;
     
 }
 
 .email li:nth-child(1) {
-    font-size: 22px;
+    font-size: 19px;
     font-weight: lighter;
     padding-bottom: 10px;
 }
@@ -642,6 +642,8 @@ display: block;
 }
 
 
+
+
 .img-info-container h1{
 	width: 200px;
 	position: relative;
@@ -703,6 +705,10 @@ display: block;
 	text-align: left;
 }
 
+.workIntro{
+	border: none !important;
+}
+
 .workIntro,.work-info{
 	border: 1px solid #f0f0f0;
 	border-top: 0;
@@ -734,6 +740,34 @@ display: block;
 	font-weight: initial;
 	font-style: italic;
 	text-align: left;
+	
+height: 25px;
+}
+
+.h3-border{
+	border: 2px solid cadetblue ;
+	width: 150px;
+	top: -15px;
+	position: relative;
+	transition: 1s;
+}
+
+.border-width{
+	width: 100% !important;
+}
+
+.h3-border1{
+	border: 1px solid cadetblue;
+	width: 100%;
+	position: relative;
+    bottom: 18px;
+
+}
+
+.h3-border:hover{
+	width: 100%;
+	transition: 1s;
+
 }
 
 .svg-info{
@@ -788,6 +822,7 @@ textarea{
 	padding-top :5px;
 	width: 100%;
 	height: 80px;
+	outline: none;
 }
 
 .contact-wrapper{
@@ -833,8 +868,12 @@ form input{
 	margin: 20px;
 }
 
+.about{
+	clear: both;
+}
+
 .about-skills, .contact-wrapper {
-	width: 90%;
+	width: 80%;
 	margin: 0 auto;
 }
 
@@ -842,6 +881,7 @@ form input{
 	 text-align: left;
 	width: 60%;
 	margin-bottom: 10px;
+	margin-top: 20px;
 }
 
 .about, .skills{
@@ -851,10 +891,10 @@ form input{
 
 .skills{
 	height: 100px;
-	border: 1px solid #f0f0f0;
+	/*border: 1px solid #f0f0f0;
 	border-right: none;
 	border-left: none;
-	border-top: none;
+	border-top: none;*/
 }
  
 .skills li{
@@ -921,14 +961,20 @@ form input{
   	margin-top: 130px;
   }
 
-  header div#slide figure img,.img-info-container{
-  	height: 500px;
+  header, header div#slide figure img,.img-info-container{
+  	height: 440px;
   }
 
  
 }
 
 @media screen and (min-width: 780px) {
+.rgt-col .h3-border{
+    position: sticky;
+    left: 77.6%;
+    margin-bottom: 15px;
+}
+
 	form{
 		width: 500px;
 		height: 130px;
@@ -941,8 +987,8 @@ form input{
 
 	.tweets{
 		margin-left: auto !important;
-		margin-right: auto !important;
-		width: 70% !important;
+		margin-right: auto ;
+		width: 50% !important;
 	}
 
 	.mobile-menu{
@@ -954,39 +1000,61 @@ form input{
 	}
 	.email-container,.location-container{
 		width: 50%;
-		border: 1px solid #f0f0f0;
-		border-right: none;
-		border-left: none;
-		border-top: none;
+		
 	}
 
 	.email-container{
 		float: left;
 	}
 
-
+	.info{
+		width: 50%;
+height: auto;
+margin: 0 auto;
+	}
 
 	.info2{
 		clear: both;
 		width: 100%;
+		height: auto;
 		display: flex;
+		border: 1px solid #f0f0f0;
+		border-right: none;
+		border-left: none;
+		border-bottom: none;
+	}
+	
+	.info2 ul:nth-of-type(1){
+		margin-left: 70px;
+	}
+
+	.info2 ul li{
+		width: auto !important;
 	}
 
 	.desktop-nav{
 		display: initial !important;
 		height: 40px;
-		margin:0 0 0 0;
-		position: relative;
-		top: 100px;
-		left: 190px;
+		margin:50px 0 0 auto;
+		width: 400px;
 	}
 
 	.desktop-nav li{
 		display: inline;
 		font-weight: normal !important;
 		font-size: 15px !important;
+		padding: 18px !important;
+		padding: 0 !important;
+padding-left: 5px !important;
+		/*border: 3px solid;
+border-bottom: 0;
+border-top: 0;
+border-right: 0;*/
+		cursor: pointer;
 	}
 
+.desktop-nav li:hover{
+}
 /*	.fix-desktop-nav{
 		position: fixed !important;
 		z-index: 33;
@@ -995,7 +1063,11 @@ form input{
 
 	}*/
 
+.fix{
 
+		position: initial;
+		background-color: #fff; 
+}
 	.intro2{
 
 		font-size: 24px;
@@ -1030,10 +1102,20 @@ form input{
 		font-size: 18px;
         line-height: 1.5;
 	}
-	
-	.button{
-		padding-left: 7px;
+
+	.about-skills h3:nth-of-type(1), .contact-wrapper h3{
+		margin: 10px auto 20px;
+		text-align: center;
+		width: 170px;
 	}
+
+	.about-skills{
+		clear: both;
+	}
+	
+/*	.button{
+		padding-left: 7px;
+	}*/
 
 	.rgt-col .button{
 		left: -32%;
@@ -1056,8 +1138,93 @@ form input{
 	}
 
 	.rgt-col h3{
-		position: relative;
-		left: 79%;
 		width: 150px;
+		position: sticky;
+        left: 79%;
 	}
 }
+
+@media screen and (min-width: 1024px) {
+	.portfolio{
+		width: 70%;
+	}
+.rgt-col .h3-border{
+    position: sticky;
+    left: 77.6%;
+    margin-bottom: 15px;
+}
+	.about{
+		font-size: 13px;
+		width: 90%;
+	}
+	.about-skills{
+		width: 30% !important;
+		z-index: 2222;
+		position: absolute;
+		top: 676px;
+		left: 70%;
+		margin-left: auto !important; 
+		margin-right: 0 !important;
+		position: absolute;
+		font-size: 13px;
+
+	}
+
+	.skills{
+		border: none !important;
+	}
+
+	.fixed-about-skills{
+		position: fixed !important;
+		top: 0;
+	}
+
+	.fixed-tweets{
+		position: fixed !important;
+		top: 270px !important;
+	}
+
+	.tweets{
+		width: 30% !important;
+		position: absolute;
+    	left: 70%;
+    	z-index: 88;
+    	top: 926px;
+   		width: 30%;
+    	margin-left: auto;
+	}
+
+	.contact-wrapper{
+		width: 70%;
+		margin:30px 0 0 0;
+	}
+
+	.contact-wrapper h3{
+		width: 300px;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+margin: 0 auto 20px;
+	}
+
+	.contact-svg{
+		margin-top: 60px;
+
+	}
+
+	form{
+		height: auto;
+		margin-top: 30px;
+	}
+
+	
+
+	 
+}
+
+.border-width{
+	width: 100% !important;
+}
+/*
+article tweets and about sec
+border colors on hover*/

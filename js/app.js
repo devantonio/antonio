@@ -373,19 +373,25 @@ $("#pos3").click(function() {
 
 
 
+ 
 
-
-
-
-
-
+var nav = $(".info2");
 
 
 var x = $(".mobile-menu").offset();
-    //console.log(x.top);
+    //console.log(x.top); 
 
+var s = $("#sec1").offset().top;
+var s2 = $("#sec2").offset().top;
+console.log(s);
+console.log(s2);
+// $("#sec1").mouseover(function(){
+//   $(".h3-border").addClass("border-width");
+// });
+// $("#sec1").mouseout(function(){
+//   $(".h3-border").removeClass("border-width");
+// });
 
-var nav = $(".info2");
 $(window).on("scroll", function(e) {
     // console.log($(".info2").offset().top);
     // console.log($(window).scrollTop());
@@ -403,8 +409,43 @@ $(window).on("scroll", function(e) {
   $(".mobile-menu").removeClass("fix1");
 }
   }
-  
+if($(window).width() > 1024 ){ 
+  if ($(window).scrollTop() > 636 )  {
+    $(".about-skills").addClass("fixed-about-skills");
+    $(".tweets").addClass("fixed-tweets");
+  } else{
+    $(".about-skills").removeClass("fixed-about-skills");
+    $(".tweets").removeClass("fixed-tweets");
+  }
+   
+if ($(window).scrollTop() > 360 )  {
+  $(".h3-border").addClass("border-width");
+}
+
+}
 });
+
+
+$(window).on("resize", function(e) {
+  if ($(window).scrollTop() > 636 )  {
+    $(".about-skills").addClass("fixed-about-skills");
+    $(".tweets").addClass("fixed-tweets");
+  } else{
+    $(".about-skills").removeClass("fixed-about-skills");
+    $(".tweets").removeClass("fixed-tweets");
+  }
+if($(window).width() < 1023 ){ 
+    $(".about-skills").removeClass("fixed-about-skills");
+    $(".tweets").removeClass("fixed-tweets");
+ 
+}
+});
+
+
+
+
+
+
 
 function openNav() {
   if(!$(".line1").hasClass("open1")){
