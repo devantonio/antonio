@@ -69,14 +69,11 @@ header{
 
 
 
-.close-hr{
-
-}
 
 .sidenav hr{
 	width: 50px;
 	height: 2px;
-	background-color: #00695c;
+	background-color: #3F729B;
 	margin-top: 0;
 	border: none;
 	position: absolute;
@@ -214,7 +211,6 @@ header{
 	margin-bottom: 0px;
 	font-size: 14px;
 	font-weight: lighter;
-	color: #000000d6;
 	width: 190px;
 }
 
@@ -422,7 +418,19 @@ height: 100px;
 border-left: none;
 border-top: none;
 border-bottom: none;
-background-color: #000;
+background-color: #e0e0e0;
+}
+
+.hr2{
+	width: 1px;
+height: 100px;
+border-left: none;
+border-top: none;
+border-bottom: none;
+background-color: #e0e0e0;
+display: inline-block;
+position: relative;
+left: 50%;
 }
 
 .bullets{
@@ -705,6 +713,9 @@ display: block;
 	width: 75%;
 	margin-left: auto;
 	margin-right: auto;
+	font-size: 2.5em;
+	font-weight: lighter;
+	color: #3F729B;
 
 }
 
@@ -734,6 +745,13 @@ display: block;
 	text-align: center;
 	margin-left: auto; 
 	margin-right: auto;
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+.about{
+	font-size: 18px;
+line-height: 1.5;
 }
 
 .work img{
@@ -752,7 +770,7 @@ height: 25px;
 }
 
 .h3-border{
-	border: 2px solid cadetblue ;
+	border: 2px solid #3F729B;
 	width: 150px;
 	top: -15px;
 	position: relative;
@@ -764,7 +782,7 @@ height: 25px;
 }
 
 .h3-border1{
-	border: 1px solid cadetblue;
+	border: 1px solid #3F729B;
 	width: 100%;
 	position: relative;
     bottom: 18px;
@@ -807,6 +825,10 @@ height: 25px;
 	margin-top: 50px;
 }
 
+.portfolio h2{
+	font-weight: normal;
+	color: #3F729B;
+}
 
 .border{
 	border: none;
@@ -814,7 +836,7 @@ height: 25px;
 
 .tweets{
 	width: 60%;
-	margin: 0 auto;
+	margin: 10px auto;
 }
 
 .tweets-header{
@@ -895,6 +917,9 @@ form input{
 	width: 60%;
 	margin-bottom: 10px;
 	margin-top: 20px;
+	font-weight: normal;
+	color: #3F729B;
+
 }
 
 .about, .skills{
@@ -923,19 +948,21 @@ form input{
 	width: auto;
 	padding: 5px;
 	color: white;
-	background-color: #474747;
+	background-color: #37474F;
 	font-size: 13px;
 }
 
 .required-bullet1,.required-bullet2,.required-bullet3{
 	width: 4px;
 	height: 4px;
-	background-color: tomato;
+	background-color: #ff4444;
 	border-radius: 180px;
 	position: relative;
 	top: 10px;
 	left: 5px;
 }
+
+ 
 
 @media screen and (min-width: 580px) {
   .form-name,.form-email{
@@ -1058,18 +1085,18 @@ margin: 0 auto;
 	.desktop-nav li{
 		display: inline;
 		font-weight: normal !important;
-		font-size: 15px !important;
-		padding: 18px !important;
-		padding: 0 !important;
-padding-left: 5px !important;
-		/*border: 3px solid;
-border-bottom: 0;
-border-top: 0;
-border-right: 0;*/
+		font-size: 17px !important;
+font-weight: bold !important;
+padding: 5px;
+	color: #474747;
+	
+
 		cursor: pointer;
 	}
 
-.desktop-nav li:hover{
+.desktop-nav li:hover{border: 3px solid #3F729B;border-top: 0;
+border-right: 0;
+border-left: 0;
 }
 /*	.fix-desktop-nav{
 		position: fixed !important;
@@ -1221,6 +1248,8 @@ text-align: center;
 margin-left: auto;
 margin-right: auto;
 margin: 0 auto 20px;
+	font-weight: lighter;
+	color: #3F729B;
 	}
 
 	.contact-svg{
@@ -1233,11 +1262,9 @@ margin: 0 auto 20px;
 		margin-top: 30px;
 	}
 
-	.desktop-nav li {
-	font-size: 17px !important;
-	font-weight: bold !important;
-	color: #474747;
-	border: 2px solid cadetblue;
+.hr2{
+	
+left: 35%;
 }
 	 
 }

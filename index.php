@@ -68,12 +68,12 @@
         <div class="info2">    
  
           <ul>
-            <li>ANTONIO ENGLISH</li>
+            <li><a href="index">ANTONIO ENGLISH</a></li>
             <li>WEB DEVELOPER, PROGRAMMER & DESIGNER</li>
           </ul>
 
           <ul class="desktop-nav">
-            <li>Home</li>
+            <li>Home </li>
             <li>Portfolio</li>
             <li>About</li>
             <li>Contact</li>
@@ -132,7 +132,7 @@
     <div id="pos2"></div>
     <div id="pos3"></div>
   </div>
-  <div class="prev"  onclick="Check it out();unbind();" ><img src="preview.svg" alt=""></div>
+  <div class="prev"  onclick="preview();unbind();" ><img src="preview.svg" alt=""></div>
   <!-- <div class="pause-play-container" onclick="toggleSlide();">
     <div class="pause-play-wrapper">
       <div class="pause-play1"></div>
@@ -142,7 +142,7 @@
   <div class="next" onclick="next();unbind();"><img src="next.svg" alt=""></div>
    
   <!-- <span>&#9658;</span> -->
-</div>
+
   
   </header>
  <!-- <img class="svg-sprite" src="svg10.svg" alt="">
@@ -232,11 +232,11 @@
    
 
     <div class="about-skills">
-      <h3>about antonio</h3>
+      <h3>About Antonio</h3>
       <div class="about">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam vel reiciendis debitis magni doloribus nostrum animi at possimus. Impedit voluptatum omnis, pariatur harum earum quaerat quos debitis minus molestiae officia!
       </div>
-        <h3>tools</h3>
+        <h3>Skills</h3>
       <div class="skills">
         <ul>
           <li>html</li>
@@ -254,10 +254,31 @@
       <!-- <h2 class="tweets-header">TWEETS</h2> -->
        <a class="twitter-timeline" data-height="380"  href="https://twitter.com/devantonio16?ref_src=twsrc%5Etfw">Tweets by devantonio16</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
     </div>
-
+<hr class="hr2">
    <div class="contact-wrapper">
+    <?php
+
+if (($_SERVER["REQUEST_METHOD"]) == "POST"){
+        $subject    = trim(filter_input(INPUT_POST,"subject", FILTER_SANITIZE_STRING));
+        $name    = trim(filter_input(INPUT_POST,"name", FILTER_SANITIZE_STRING));
+        $email   = trim(filter_input(INPUT_POST,"email", FILTER_SANITIZE_EMAIL));
+        $message = trim(filter_input(INPUT_POST,"message", FILTER_SANITIZE_SPECIAL_CHARS));
+        
+        require 'libs/PHPMailer/PHPMailerAutoload.php';
+        include "inc/mailer.php";
+
+if ($subject == '') {$mail->Subject = 'INQUIRY';}
+        
+if ($_POST["address"] != "" ) {echo("Bad input.");exit;}
+
+if ($mail->send()) {}       
+
+}
+
+ 
+?>
     <h3>Contact Antonio</h3>
-     <form action="" method="post">
+     <form action="index.php" method="post">
 
        <input class="form-subject" name="subject" type="text" placeholder="Subject">
        <div class="required-bullet1"></div>
@@ -265,15 +286,18 @@
        <div class="required-bullet2"></div>
        <input class="form-email" name="email" type="email" placeholder="Email">
        <div class="required-bullet3"></div>
-       <textarea style="font-size:13px;" name="message" placeholder="What's up?"    ></textarea>
-       <input class="button contact-button" type="submit" name="submit" value="Send">
+       <input class="address" type="text" name="address" placeholder="leave this blank" style="display
+      : none">
+       <textarea class="textarea" style="font-size:13px;" name="message" placeholder="What's up?"    ></textarea>
+       <input class="btn button contact-button" type="submit" name="submit" value="Send">
      </form>
      <footer>
        <div class="contact-svg">
          <a href="https://github.com/devantonio" target="blank"><img src="github.svg" alt=""></a>
-         <a href="https://twitter.com/devantonio16?lang=en" target="blank"><img src="twitter.svg" alt=""></a>
+         <a href="https://twitter.com/devantonio16" target="blank"><img src="twitter.svg" alt=""></a>
          <a href="https://stackoverflow.com/users/7886567/antonio?tab=profile" target="blank"><img src="stack.svg" alt=""></a>
        </div>
+
 
        <ul ><li id="li"></li></ul>
       </footer>

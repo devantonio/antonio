@@ -19,7 +19,7 @@ $("#li").text( "Antonio English   | " + new Date().getFullYear());
 
 
 function animate_info_in1(){
-   $(".h1-1").text("work1");
+   $(".h1-1").text("Curiosity");
  $(".h1-1").fadeIn(); 
 $(".h1-1").addClass("o");
 $(".h1-1").addClass("position-h1");
@@ -37,7 +37,7 @@ $(".h1-1").addClass("position-h1");
 
 
 function animate_info_in2(){
-   $(".h1-2").text("work2");
+   $(".h1-2").text("Adaptability");
  $(".h1-2").fadeIn();
 $(".h1-2").addClass("o");
 $(".h1-2").addClass("position-h1");
@@ -55,7 +55,7 @@ $(".h1-2").addClass("position-h1");
 
 
 function animate_info_in3(){
-   $(".h1-3").text("work3");
+   $(".h1-3").text("Work Related Skills");
  $(".h1-3").fadeIn(); 
 $(".h1-3").addClass("o");
 $(".h1-3").addClass("position-h1");
@@ -372,7 +372,6 @@ $("#pos3").click(function() {
 
 
 
-
  
 
 var nav = $(".info2");
@@ -446,9 +445,12 @@ if($(window).width() > 1024 ){
 // }
 
 }
-});
-
-
+}); 
+if ($(window).scrollTop() > 636 )  {
+$(".about-skills").addClass("fixed-about-skills");
+    $(".tweets").addClass("fixed-tweets");
+ 
+}
 $(window).on("resize", function(e) {
   if ($(window).scrollTop() > 636 )  {
     $(".about-skills").addClass("fixed-about-skills");
@@ -596,36 +598,36 @@ $('.mobile-nav').click(function(event){
     event.stopPropagation();
 });
   
-$('.btn').click(function(event) {
-    var patt = new RegExp("@");
-    if ( patt.test($(".email:text").val()) === false) {
-      event.preventDefault();
-      $(".emailValidation").css("visibility", "visible");
-    } else {
-       $(".emailValidation").css("visibility", "hidden");
-    }
-});
+// $('.btn').click(function(event) {
+//     var patt = new RegExp("@");
+//     if ( patt.test($(".form-email:text").val()) === false) {
+//       event.preventDefault();
+//       $(".emailValidation").css("visibility", "visible");
+//     } else {
+//        $(".emailValidation").css("visibility", "hidden");
+//     }
+// });
 
 
 
-$('.btn').click(function(event) {
-if ($(".email:text").val() === "" || $(".name:text").val() === "" || $(".textarea").val() === "") {
-  event.preventDefault();
-  $('.error-msg').css("visibility", "visible");
-  $(".msgSent").css("visibility", "hidden");
-} else {
-    $('.error-msg').css("visibility", "hidden");
-}
-});
+// $('.btn').click(function(event) {
+// if ($(".form-email:text").val() === "" || $(".form-name:text").val() === "" || $(".textarea").val() === "") {
+//   event.preventDefault();
+//   $('.error-msg').css("visibility", "visible");
+//   $(".msgSent").css("visibility", "hidden");
+// } else {
+//     $('.error-msg').css("visibility", "hidden");
+// }
+// });
  
-var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+// var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
  
- $(window).on('load', function () {
-  if (iOS === true) {
-    $('header').addClass('ios-background');
-    $('.footer-background').addClass('ios-background');
-  }
-});
+//  $(window).on('load', function () {
+//   if (iOS === true) {
+//     $('header').addClass('ios-background');
+//     $('.footer-background').addClass('ios-background');
+//   }
+// });
 
 
 
