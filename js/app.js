@@ -254,7 +254,7 @@ function callNext(){
   if(click < numOfImages - 1){
     click++;
     $("#x").css("left", -click + "00%");
-    console.log(click);
+    //console.log(click);
   } 
 }
 
@@ -262,8 +262,8 @@ function callPreview(){
   if(click > 0){
     click--;
     $("#x").css("left", -click + "00%");
-    console.log(-click + "00%");
-    }console.log(click);
+    //console.log(-click + "00%");
+    }//console.log(click);
 }
 
   function next(){
@@ -598,6 +598,106 @@ $('.mobile-nav').click(function(event){
     event.stopPropagation();
 });
   
+
+// $("form").on("submit",function(e){
+//   e.preventDefault();
+// alert("Submitted");
+// });
+
+
+
+// function loadDoc() {
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       document.getElementById("demo").innerHTML = this.responseText;
+//     }
+//   };
+//   xhttp.open("POST", "demo_post2.asp", true);
+//   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   xhttp.send("fname=Henry&lname=Ford");
+// }
+
+
+// $("form").submit(function(e){
+//   e.preventDefault();
+
+//   var subject = $(".form-subject").val();
+//   var name = $(".form-name").val();
+//   var email = $(".form-email").val();
+//   var textarea = $(".textarea").val();
+//   var params = "subject="+subject+"&name="+name+"&email="+email+"&textarea="+textarea;
+//   console.log(name);
+
+//   var formdata = new FormData();
+//     formdata.append( "subject", "subject" );
+//     formdata.append( "name", name );
+//     formdata.append( "email", email );
+//     formdata.append( "message", textarea );
+
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//   xhttp.open("POST", "inc/mailer.php", true);
+//   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+// console.log(formdata.append( "subject", subject ));
+// console.log(formdata.append( "name", name ));
+// console.log(formdata.append( "email", email ));
+// console.log(formdata.append( "message", textarea ));
+
+// console.log(xhttp.readyState );//1
+// console.log(xhttp.status);//0
+
+//   xhttp.onload = function(){
+//     console.log(this.responseText);
+//   }
+
+// }
+// console.log(xhttp.readyState );//1
+// console.log(xhttp.status);//0
+//   xhttp.send(formdata);
+// }
+// });
+
+
+
+
+
+
+
+$("form").submit(function(e){
+  e.preventDefault();
+var subject = $(".form-subject").val();
+  var name = $(".form-name").val();
+  var email = $(".form-email").val();
+  var textarea = $(".textarea").val();
+  var params = "subject="+subject+"&name="+name+"&email="+email+"&textarea="+textarea;
+   
+
+  var formdata = new FormData();
+formdata.append( "subject", subject );
+    formdata.append( "name", name );
+    formdata.append( "email", email );
+    formdata.append( "message", textarea );
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "inc/mailer.php", true);
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+console.log(xhttp );
+
+
+console.log(xhttp.readyState );//1
+console.log(xhttp.status);//0
+    }
+  };
+  console.log(xhttp );
+  xhttp.send(formdata);
+});
+
+
+
+
 // $('.btn').click(function(event) {
 //     var patt = new RegExp("@");
 //     if ( patt.test($(".form-email:text").val()) === false) {

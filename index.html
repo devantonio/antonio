@@ -256,29 +256,9 @@
     </div>
 <hr class="hr2">
    <div class="contact-wrapper">
-    <?php
 
-if (($_SERVER["REQUEST_METHOD"]) == "POST"){
-        $subject    = trim(filter_input(INPUT_POST,"subject", FILTER_SANITIZE_STRING));
-        $name    = trim(filter_input(INPUT_POST,"name", FILTER_SANITIZE_STRING));
-        $email   = trim(filter_input(INPUT_POST,"email", FILTER_SANITIZE_EMAIL));
-        $message = trim(filter_input(INPUT_POST,"message", FILTER_SANITIZE_SPECIAL_CHARS));
-        
-        require 'libs/PHPMailer/PHPMailerAutoload.php';
-        include "inc/mailer.php";
-
-if ($subject == '') {$mail->Subject = 'INQUIRY';}
-        
-if ($_POST["address"] != "" ) {echo("Bad input.");exit;}
-
-if ($mail->send()) {}       
-
-}
-
- 
-?>
     <h3>Contact Antonio</h3>
-     <form action="index.php" method="post">
+     <form id="form" action="" method="post">
 
        <input class="form-subject" name="subject" type="text" placeholder="Subject">
        <div class="required-bullet1"></div>
@@ -287,7 +267,7 @@ if ($mail->send()) {}
        <input class="form-email" name="email" type="email" placeholder="Email">
        <div class="required-bullet3"></div>
        <input class="address" type="text" name="address" placeholder="leave this blank" style="display
-      : none">
+      : none;">
        <textarea class="textarea" style="font-size:13px;" name="message" placeholder="What's up?"    ></textarea>
        <input class="btn button contact-button" type="submit" name="submit" value="Send">
      </form>

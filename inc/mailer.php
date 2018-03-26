@@ -1,5 +1,15 @@
 <?php 
-//$mail->SMTPDebug = 2;                               // Enable verbose debug output
+
+
+if(isset($_POST["subject"]) && isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["message"])){
+//if (($_SERVER["REQUEST_METHOD"]) == "POST"){
+        $subject = trim(filter_input(INPUT_POST,"subject", FILTER_SANITIZE_STRING));
+        $name    = trim(filter_input(INPUT_POST,"name", FILTER_SANITIZE_STRING));
+        $email   = trim(filter_input(INPUT_POST,"email", FILTER_SANITIZE_EMAIL));
+        $message = trim(filter_input(INPUT_POST,"message", FILTER_SANITIZE_SPECIAL_CHARS));
+        
+       require  '../libs/PHPMailer/PHPMailerAutoload.php';
+        //$mail->SMTPDebug = 2;                               // Enable verbose debug output
 $mail = new PHPMailer;
 $mail->isSMTP();                                   // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
@@ -16,4 +26,12 @@ $mail->addReplyTo($email, $name);                        // Set email format to 
 $mail->Subject = $subject;
 $mail->Body    = $message;
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+if ($subject == '') {$mail->Subject = 'INQUIRY';}
+        
+//if ($_POST["address"] != "" ) {echo("Bad input.");exit;}
+
+if ($mail->send()) {}       
+
+}
 ?>
