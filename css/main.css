@@ -73,7 +73,7 @@ header{
 .sidenav hr{
 	width: 50px;
 	height: 2px;
-	background-color: #59698d;
+	background-color: #37474F;
 	margin-top: 0;
 	border: none;
 	position: absolute;
@@ -188,10 +188,17 @@ header{
 
 }
 
+.contact-svg a:nth-of-type(2){
+	margin-left: 5px;
+}
+
 .info2 ul li{
-	
 
 	margin: 5px 0 10px 20px;
+}
+
+.info2 ul li a{
+	color: #37474F;
 }
 
 .info2 ul li:nth-child(1) {
@@ -201,7 +208,7 @@ header{
 	margin-bottom: 0px;
 	font-weight: 800;
 	font-size: 30px;
-	color: #474747;
+	color: #37474F;
 	width: 150px;
 }
 
@@ -632,14 +639,15 @@ cursor: pointer;
 opacity: 0;
 }
 
-  button a{
+  .button a{
 
-color: #474747;
-padding-top: 7px;
+padding-top: 6px;
+padding-left: 5px;
 display: block;
 }
 
 
+   
 .button{
 	height: 35px;
 	width: 150px;
@@ -649,7 +657,6 @@ display: block;
     border: 1px solid #474747;
     cursor: pointer;
     margin: 10px auto 0 auto;
-    padding-top: 7px;
 	display: block;
 }
 
@@ -775,6 +782,7 @@ height: 25px;
 	top: -15px;
 	position: relative;
 	transition: 1s;
+	border-radius: 180px;
 }
 
 .border-width{
@@ -835,7 +843,7 @@ height: 25px;
 }
 
 .tweets{
-	width: 60%;
+	width: 80%;
 	margin: 10px auto;
 }
 
@@ -884,9 +892,9 @@ form input{
 	
 }
 
-.contact-button{
+/*.contact-button{
 	padding-bottom: 7px !important;
-}
+}*/
 
 .contact-svg{
 	width: 110px;
@@ -952,6 +960,23 @@ form input{
 	font-size: 13px;
 }
 
+.message-confirmation div{
+	    margin: 0 auto;
+    width: 90%;
+    height: auto !important;
+    text-align: center;
+    height: 50px;
+    border: 1px solid #007E33;
+    border-radius: 3px;
+    background-color: #00C851;
+    color: white !important;
+    margin-bottom: 20px;
+}
+
+.message-confirmation{
+	text-align: center;
+}
+
 .required-bullet1,.required-bullet2,.required-bullet3{
 	width: 4px;
 	height: 4px;
@@ -1008,8 +1033,6 @@ form input{
   	height: 440px;
   }
 
- 
-}
 
 @media screen and (min-width: 780px) {
 .rgt-col .h3-border{
@@ -1017,7 +1040,10 @@ form input{
     left: 77.6%;
     margin-bottom: 15px;
 }
-
+.message-confirmation div{
+	width: 65%;
+ 
+}
 	form{
 		width: 500px;
 		height: 130px;
@@ -1031,7 +1057,7 @@ form input{
 	.tweets{
 		margin-left: auto !important;
 		margin-right: auto ;
-		width: 50% !important;
+		width: 70% !important;
 	}
 
 	.mobile-menu{
@@ -1088,7 +1114,7 @@ margin: 0 auto;
 		font-size: 17px !important;
 font-weight: bold !important;
 padding: 5px;
-	color: #474747;
+	color: #37474F;
 	
 
 		cursor: pointer;
@@ -1199,6 +1225,7 @@ border-left: 0;
 	.about{
 		font-size: 13px;
 		width: 90%;
+		margin: 0 auto;
 	}
 	.about-skills{
 		width: 30% !important;
@@ -1232,7 +1259,7 @@ border-left: 0;
 		position: absolute;
     	left: 70%;
     	z-index: 88;
-    	top: 926px;
+    	top: 936px;
    		width: 30%;
     	margin-left: auto;
 	}

@@ -26,7 +26,7 @@ $(".h1-1").addClass("position-h1");
 
   $("#p-btn")
 
-  .html("<p id='img-info' class='img-info img-info1'>1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero ab neque, eligendi minus perferendis iusto, .</p><button class='info-btn'>Check it out</button>");
+  .html("<p id='img-info' class='img-info img-info1'>1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero ab neque, eligendi minus perferendis iusto, .</p>");
   $(".img-info1").fadeIn();
   $(".info-btn").fadeIn();
   $(".img-info1").css("opacity", "1");
@@ -43,7 +43,7 @@ $(".h1-2").addClass("o");
 $(".h1-2").addClass("position-h1");
 
    $("#p-btn")
-  .html("<p id='img-info' class='img-info img-info2'><span>work1</span>...2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero ab neque, eligendi minus perferendis iusto, .</p><button class='info-btn2'>Check it out</button>");
+  .html("<p id='img-info' class='img-info img-info2'><span>work1</span>...2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero ab neque, eligendi minus perferendis iusto, .</p>");
   
   $(".img-info2").fadeIn(3000);
   $(".info-btn2").fadeIn(3000);
@@ -55,13 +55,13 @@ $(".h1-2").addClass("position-h1");
 
 
 function animate_info_in3(){
-   $(".h1-3").text("Work Related Skills");
+   $(".h1-3").text("Career Related Skills");
  $(".h1-3").fadeIn(); 
 $(".h1-3").addClass("o");
 $(".h1-3").addClass("position-h1");
 
    $("#p-btn")
-  .html("<p id='img-info' class='img-info img-info3'>3..Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero ab neque, eligendi minus perferendis iusto, .</p><button class='info-btn3'>Check it out</button>");
+  .html("<p id='img-info' class='img-info img-info3'>3..Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero ab neque, eligendi minus perferendis iusto, .</p>");
   $(".img-info3").fadeIn(3000);
   $(".info-btn3").fadeIn(3000);
   $(".img-info3").addClass("position-info-p");
@@ -665,14 +665,13 @@ $('.mobile-nav').click(function(event){
 
 
 
-
 $("form").submit(function(e){
   e.preventDefault();
 var subject = $(".form-subject").val();
   var name = $(".form-name").val();
   var email = $(".form-email").val();
   var textarea = $(".textarea").val();
-  var params = "subject="+subject+"&name="+name+"&email="+email+"&textarea="+textarea;
+  var address = $(".address").val();
    
 
   var formdata = new FormData();
@@ -680,17 +679,29 @@ formdata.append( "subject", subject );
     formdata.append( "name", name );
     formdata.append( "email", email );
     formdata.append( "message", textarea );
+    formdata.append( "address", address );
   var xhttp = new XMLHttpRequest();
   xhttp.open("POST", "inc/mailer.php", true);
+
+  if (xhttp.readyState !== 4){
+    $(".btn").attr("value", "sending...");
+  } 
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 console.log(xhttp );
+$(".btn").attr("value", "Send");
+$(".message-confirmation").html(xhttp.responseText);
 
+$(".form-subject").val("");
+$(".form-name").val("");
+$(".form-email").val("");
+$("textarea").val("");
 
 console.log(xhttp.readyState );//1
 console.log(xhttp.status);//0
     }
-  };
+  };console.log(xhttp.readyState );//1
+console.log(xhttp.status);//0
   console.log(xhttp );
   xhttp.send(formdata);
 });
@@ -702,22 +713,49 @@ console.log(xhttp.status);//0
 //     var patt = new RegExp("@");
 //     if ( patt.test($(".form-email:text").val()) === false) {
 //       event.preventDefault();
-//       $(".emailValidation").css("visibility", "visible");
+//       $(".form-email").css("border-color", "#ff4444");
 //     } else {
-//        $(".emailValidation").css("visibility", "hidden");
+//        $(".form-email").css("border-color", "yellow");
 //     }
 // });
 
 
-
 // $('.btn').click(function(event) {
-// if ($(".form-email:text").val() === "" || $(".form-name:text").val() === "" || $(".textarea").val() === "") {
 //   event.preventDefault();
-//   $('.error-msg').css("visibility", "visible");
-//   $(".msgSent").css("visibility", "hidden");
-// } else {
-//     $('.error-msg').css("visibility", "hidden");
-// }
+//   var patt = new RegExp("@");
+// if ($(".form-email").val() === "" || patt.test($(".form-email").val()) === false){ 
+//   $(".form-email").css("border-color", "#ff4444");
+//   }else{
+//     $(".form-email").css("border-color", "#474747");
+//   }
+//   if($(".form-name:text").val() === ""){
+//     $(".form-name").css("border-color", "#ff4444");
+//   }else{
+//     $(".form-name").css("border-color", "#474747");
+//   }
+//   if($("textarea").val() === ""){
+//     $(".textarea").css("border-color", "#ff4444");
+//   } else{
+//     $(".textarea").css("border-color", "#474747");
+//   }
+ 
+// });
+
+
+
+
+// $(".input").keypress(function(){
+//    var patt = new RegExp("@");
+//       if ($(".form-email").val() !== "" && patt.test($(".form-email").val()) === true){ 
+  
+//     $(".form-email").css("border-color", "#474747");
+//   }
+//   if($(".form-name:text").val() !== ""){
+//     $(".form-name").css("border-color", "#474747");
+//   }
+//   if($("textarea").val() !== ""){
+//     $(".textarea").css("border-color", "#474747");
+//   } 
 // });
  
 // var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);

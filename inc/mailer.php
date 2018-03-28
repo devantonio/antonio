@@ -29,9 +29,9 @@ $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if ($subject == '') {$mail->Subject = 'INQUIRY';}
         
-//if ($_POST["address"] != "" ) {echo("Bad input.");exit;}
+if ($_POST["address"] !== "") {echo("Bad input.");exit;}
 
-if ($mail->send()) {}       
+if ($mail->send()) {echo('<div><p>Thank you '  .$name.'!' . ' Your message has been sent.</p></div>');}       
 
 }
 ?>
