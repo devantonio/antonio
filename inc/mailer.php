@@ -2,12 +2,13 @@
 
 
 if(isset($_POST["subject"]) && isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["message"])){
+	
 //if (($_SERVER["REQUEST_METHOD"]) == "POST"){
         $subject = trim(filter_input(INPUT_POST,"subject", FILTER_SANITIZE_STRING));
         $name    = trim(filter_input(INPUT_POST,"name", FILTER_SANITIZE_STRING));
         $email   = trim(filter_input(INPUT_POST,"email", FILTER_SANITIZE_EMAIL));
         $message = trim(filter_input(INPUT_POST,"message", FILTER_SANITIZE_SPECIAL_CHARS));
-        
+        if(!empty($email)){if(!empty($name)){if(!empty($message)){
        require  '../libs/PHPMailer/PHPMailerAutoload.php';
         //$mail->SMTPDebug = 2;                               // Enable verbose debug output
 $mail = new PHPMailer;
@@ -34,4 +35,5 @@ if ($_POST["address"] !== "") {echo("Bad input.");exit;}
 if ($mail->send()) {echo('<div><p>Thank you '  .$name.'!' . ' Your message has been sent.</p></div>');}       
 
 }
+}}}
 ?>
